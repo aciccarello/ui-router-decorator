@@ -6,8 +6,9 @@
   "typings": "dist/index.d.ts",
   "scripts": {
     "prepublish": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "tsc -w",
+    "test": "karma start",
+    "test:watch": "karma start --auto-watch --no-single-run",
+    "watch": "tsc -w | npm run test --  --auto-watch --no-single-run",
     "lint": "tslint src/**/*.ts"
   },
   "repository": {
@@ -26,9 +27,16 @@
   },
   "homepage": "https://github.com/aciccarello/ui-router-decorator#readme",
   "devDependencies": {
+    "browserify": "^13.0.0",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-browserify": "^5.0.3",
+    "karma-chrome-launcher": "^0.2.3",
+    "karma-jasmine": "^0.3.8",
     "tslint": "^3.8.0",
     "typescript": "^1.8.10",
-    "typings": "^0.8.1"
+    "typings": "^0.8.1",
+    "watchify": "^3.7.0"
   },
   "dependencies": {}
 }
